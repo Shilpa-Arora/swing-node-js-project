@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+ <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+
+<div class="container" id="homediv">
+
+<br>
+<br>
+<br>
+<hr>
+<img src="images/profileimages/<%= user.profileimage %>" class="img-responsive img-circle margin " style="display:inline" alt="profile image missing" id="profilepic">
+
+ <br>  
+<a href="/survey"><h3 class="btn mainButton">Survey</h3></a>
+<br>
+<br>
+<div id="homeDiv">
+<div id="mainDiv">
+</div>
+<div id="quoteDiv">
+<br><p>“ <%= quote.quotation %>” <br><br>
+- <%= quote.author %></p><br>
+</div>
+</div>
+
+         
+<%- include partials/footer %>
+</body>
+ <style type="text/css">
+  	#mainDiv{
+  max-width: 100%;
+  max-height: 100%;
+  		   background: url(../images<%= quote.image %>);
+    background-size: cover;
+    background-repeat: no-repeat;
+  	}
+  </style>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

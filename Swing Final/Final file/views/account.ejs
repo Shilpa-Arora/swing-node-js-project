@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+<title><%= title %></title>
+
+<%- include partials/head %>
+ <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+
+<%- include partials/header %>
+<div class="container" id="accountdiv">
+
+<br>
+<br>
+<br>
+<hr class="abouthr">
+
+<div id="divaccount">
+<a href="/logout">
+<h3>Logout</h3>
+<img src="images/exit.svg" id="log" alt="image missing">
+</a>
+<br>
+<br>
+<h4>Update your Information</h4><br>
+<form method="POST" action="/account/<%= user.id %>" id="register_form" enctype="multipart/form-data">
+
+<div class="row">
+<div class="col-xs-4 text-left">
+<img src="images/user.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-8 text-left">
+<input type="text" name="username" id="username"  placeholder="Enter your Name" class="registerinput"/>
+</div>
+
+</div>
+<hr>
+
+<div class="row">
+<div class="col-xs-4 text-left">
+<img src="images/email.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-8 text-left">
+
+<input type="text" name="email" id="email"  placeholder="Update your Email" class="registerinput"/>
+
+</div>
+
+</div>
+
+<hr>                       
+
+<div id="themes">
+<h4 id="headingaccountdiv">Themes</h4>
+<ul>
+
+<li><label><input type="radio" name="optradio" value="main1.css"onclick="setStyleSheet('stylesheets/main1.css')">Default</label>
+ <div class="check"><div class="inside"></div></div></li>
+
+<li><label><input type="radio" name="optradio" value="main2.css"onclick="setStyleSheet('stylesheets/main2.css')">Magic</label>
+ <div class="check"><div class="inside"></div></div></li>
+ 
+<li><label><input type="radio" name="optradio" value="main3.css"onclick="setStyleSheet('stylesheets/main3.css')">Intellect</label>
+ <div class="check"><div class="inside"></div></div></li>
+<li><label><input type="radio" name="optradio" value="main4.css"onclick="setStyleSheet('stylesheets/main4.css')">Harmony</label>
+ <div class="check"><div class="inside"></div></div></li>
+<li><label><input type="radio" name="optradio" value="main5.css"onclick="setStyleSheet('stylesheets/main5.css')">Sunshine</label>
+ <div class="check"><div class="inside"></div></div></li>
+
+</ul>
+
+</div>
+
+<hr>
+<h4 id="headingaccountdiv">Upload your profile Image<br><br></h4>
+<div id="upload" class="btn">
+
+<input type="file" name="image" id="image" class="inputfile" />
+</div><br>
+
+<input type="submit" class="btn mainButton" value="Submit">
+
+</form>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+<%- include partials/footer %>
+</body>
+<script src="javascripts/bootstrap.js"></script>
+<script src="javascripts/main.js"></script>
+
+</html>

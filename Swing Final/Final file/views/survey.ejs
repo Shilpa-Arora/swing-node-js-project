@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+ <div class="container" id="surveyform">
+<br>
+<br>
+<br>
+<hr>
+<div id="divaccount">
+<h3>Survey</h3>
+<img src="images/profileimages/<%= user.profileimage %>" class="img-responsive img-circle margin " style="display:inline" alt="profile image missing" id="profilepic" >
+
+ <br> 
+ <img src="images/rate-scale2.svg" alt="gallery image missing" class="ratingImage">
+
+        
+        <form method="POST" action="survey">
+        
+<br>
+
+<div class="row">
+<div class="col-xs-10 text-left">
+<p>1. How was your today?</p> 
+</div>
+<div class="col-xs-2">
+<output id="rangevalue1"></output>
+  </div>
+  </div>
+<input type="range" name="range1" id="rangeValue1" min="0" max="10" onchange="rangevalue1.value=value" />
+
+  <br>
+
+
+
+
+  <div class="row">
+  <div class="col-xs-10 text-left">
+<p>2. How was your concentration level today?</p>   
+</div>
+<div class="col-xs-2">
+<output id="rangevalue2"></output>
+ </div>
+  </div>
+<input type="range" name="range2" id="rangeValue2" min="0" max="10" onchange="rangevalue2.value=value"/>
+ 
+  <br>
+
+
+  <div class="row">
+  <div class="col-xs-10 text-left">
+
+<p>3. Rate your sleep last night?</p>
+</div>
+<div class="col-xs-2">
+ <output id="rangevalue3"></output> 
+  </div>
+  </div>
+<input type="range" name="range3" id="rangeValue3" min="0" max="10" onchange="rangevalue3.value=value"/>
+
+  <br>
+
+
+
+  <div class="row">
+  <div class="col-xs-10 text-left">
+<p>4. How was your energy level today?</p>
+</div>
+<div class="col-xs-2">
+ <output id="rangevalue4"></output> 
+  </div>
+  </div>
+<input type="range" name="range4" id="rangeValue4" min="0" max="10" onchange="rangevalue4.value=value"/>
+
+  <br>
+
+
+
+
+  <div class="row">
+  <div class="col-xs-10 text-left">
+<p>5. Rate your interest in various activities  you did today?</p>  
+</div>
+<div class="col-xs-2">
+ <output id="rangevalue5"></output>
+</div>
+</div>
+<input type="range" name="range5" id="rangeValue5" min="0" max="10" onchange="rangevalue5.value=value"/>
+
+<br>
+
+
+
+<input type="submit" class="btn mainButton" value="Submit">
+</form>
+</div>
+</div>
+
+         
+<%- include partials/footer %>
+</body>
+
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+<div class="container" id="gallerydiv" >
+<br>
+<br>
+<br>
+<hr>
+<h3>Gallery</h3>
+
+<br>
+ <br> 
+<p class="discription">A great place to store your happy moments. Please upload the images with the button below.<p>
+
+<form method="POST" action="gallery" enctype="multipart/form-data">
+<div id="upload" class="btn">
+
+<input type="file" name="image" id="image" class="inputfile" />
+</div><br>
+<input type="submit" class="btn mainButton" >
+</form>
+<br>
+
+   <img src=" images/inigallery/img 1.jpg" alt="gallery image missing" class="galleryImage">   
+  <img src=" images/inigallery/img 2.jpg" alt="gallery image missing" class="galleryImage">   
+   <img src=" images/inigallery/img 3.jpg" alt="gallery image missing" class="galleryImage"> 
+    <img src=" images/inigallery/img 4.jpg" alt="gallery image missing" class="galleryImage">   
+  <img src=" images/inigallery/img 5.jpg" alt="gallery image missing" class="galleryImage">   
+   <img src=" images/inigallery/img 6.jpg" alt="gallery image missing" class="galleryImage"> 
+      <img src=" images/inigallery/img 7.jpg" alt="gallery image missing" class="galleryImage">   
+  <img src=" images/inigallery/img 8.jpg" alt="gallery image missing" class="galleryImage">   
+   <img src=" images/inigallery/img 9.jpg" alt="gallery image missing" class="galleryImage"> 
+    <img src=" images/inigallery/img 10.jpg" alt="gallery image missing" class="galleryImage">   
+  <img src=" images/inigallery/img 11.jpg" alt="gallery image missing" class="galleryImage">
+
+
+
+
+
+</div>
+<%- include partials/footer %>
+</body>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>
+<!--  enctype="multipart/form-data" -->
+ <!-- multiple="multiple" -->

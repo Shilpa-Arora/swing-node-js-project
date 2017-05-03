@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+ <div class="container" id="surveyform">
+<br>
+<br>
+<br>
+<hr>
+<div id="divaccount">
+<h3>Progress</h3>
+<p class="discription">Below is the 7 days progress report for you.</p>
+ <img src="images/prog-scale1.png" alt="gallery image missing" class="progImage">
+         <div id="graph"></div> <br>
+<p>Feedback</p>
+         <div id="result"></div>
+         <br>
+
+</div>
+<%- include partials/footer %>
+</div>
+</body>
+<script src="javascripts/d3.min.js"></script>
+ <script src="http://d3js.org/d3.v2.min.js"></script>
+  <script src="javascripts/bootstrap.js"></script>
+  <script>
+function renderChart() {
+var bardata = [<%= data %>];
+  var result = document.getElementById("result");
+var total = 0;
+for(var i = 0; i < bardata.length; i++)
+{
+
+total += bardata[i];
+}
+if(total < 115){
+result.innerHTML = '<p  class="discription">You are working hard on yourself. People who think positively are less likely to feel depressed, more productive at work, and generally healthier than their doom-and-gloom counterparts. That said, it’s important to be both optimistic and realistic instead of just blindly positive. People with a healthy combination of optimism and realism don’t let unhappy thoughts bring them down, but they use their realistic outlook to make smart decisions and actions. Talk about the best of both worlds.<br>Your gallery has some mood uplifting images in it. Go to your gallery and enjoy your past happy moments.</p>';
+}
+else if( total >= 115 && total < 230){
+result.innerHTML = '<p  class="discription">You are good. Enjoying time al fresco is a great way to put some pep back in your step. Living near green spaces is associated with better mental health, and even just looking at images of nature scenes can stimulate the parts of your brain associated with happiness, positivity, and emotional stability. Plus, spending time in the great outdoors exposes us to sunlight, which can help our bodies produce vitamin D.<br>Your gallery has some mood uplifting images in it. Go to your gallery and enjoy your past happy moments.</p>';
+}
+else{
+result.innerHTML = '<p  class="discription">You are really keeping up your health. What’s more,just being grateful may lead to other positive emotions (including a boost in energy and optimism) and well-being.  Besides simply thanking people, try keeping a gratitude journal, and write down what you’re thankful for every day.<br>Your gallery has some mood uplifting images in it. Go to your gallery and enjoy your past happy moments.</p>';
+}
+  var xdata=["Day 1","Day 2","Day 3","Day 4","Day 5","Day 6","Day 7"];
+
+var valueLabelWidth = 0; // space reserved for value labels (right)
+var barHeight = 40; // height of one bar
+var barLabelWidth = 40; // space reserved for bar labels
+var barLabelPadding = 5; // padding between bar and bar labels (left)
+var gridLabelHeight = 18; // space reserved for gridline labels
+var gridChartOffset = 10; // space between start of grid and first bar
+var maxBarWidth = 800; // width of the bar with the max value
+ var width="100%";
+// accessor functions 
+var barLabel = function(d) { return d; };
+var barValue = function(d) { return d; };
+ 
+// scales
+var yScale = d3.scale.ordinal().domain(d3.range(0, bardata.length)).rangeBands([0, bardata.length * barHeight]);
+var y = function(d, i) { return yScale(i); };
+var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+var x = d3.scale.linear().domain([0, 50]).range([0, '75%']);
+// svg container element
+var chart = d3.select('#graph').append("svg")
+  .attr('width', width)//width +35 for mobile
+  .attr('height', gridLabelHeight + gridChartOffset + bardata.length * barHeight);
+// grid line labels
+var gridContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+gridContainer.selectAll("text").data(x.ticks(5)).enter().append("text")
+  .attr("x", x)
+  .attr("dy", -3)
+  .attr('fill', 'white')
+  .attr("text-anchor", "middle")
+  .text(String);
+// vertical grid lines
+gridContainer.selectAll("line").data(x.ticks(5)).enter().append("line")
+  .attr("x1", x)
+  .attr("x2", x)
+  .attr("y1", 0)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "rgba(255,255,255,0.3)");
+// bar labels
+var labelsContainer = chart.append('g')
+  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+labelsContainer.selectAll('text').data(xdata).enter().append('text')
+  .attr('y', yText)
+  .attr('stroke', 'none')
+  .attr('fill', 'white')
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr('text-anchor', 'end')
+  .text(barLabel);
+
+
+var defs = chart.append("defs");
+
+//Append a linearGradient element to the defs and give it a unique id
+var linearGradient0 = defs.append("linearGradient")
+    .attr("id", "linear-gradient0");
+var linearGradient1 = defs.append("linearGradient")
+    .attr("id", "linear-gradient1");
+var linearGradient2 = defs.append("linearGradient")
+    .attr("id", "linear-gradient2");
+var linearGradient3 = defs.append("linearGradient")
+    .attr("id", "linear-gradient3");
+var linearGradient4 = defs.append("linearGradient")
+    .attr("id", "linear-gradient4");
+
+//Set the color for the start (0%)
+linearGradient0.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", "#f1705c"); //light blue
+
+//Set the color for the end (100%)
+linearGradient0.append("stop") 
+    .attr("offset", "100%")   
+    .attr("stop-color", "#e73727"); //dark blue
+
+//Set the color for the start (0%)
+linearGradient1.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", "#d96cad"); //light blue
+
+//Set the color for the end (100%)
+linearGradient1.append("stop") 
+    .attr("offset", "100%")   
+    .attr("stop-color", "#d90785"); //dark blue
+
+//Set the color for the start (0%)
+linearGradient2.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", "#fcfeff"); //light blue
+
+//Set the color for the end (100%)
+linearGradient2.append("stop") 
+    .attr("offset", "100%")   
+    .attr("stop-color", "#241fb8"); //dark blue
+
+//Set the color for the start (0%)
+linearGradient3.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", "#ebe9f9"); //light blue
+
+//Set the color for the end (100%)
+linearGradient3.append("stop") 
+    .attr("offset", "100%")   
+    .attr("stop-color", "#6d6c82"); //dark blue
+//Set the color for the start (0%)
+linearGradient4.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", "#faedfa"); //light blue
+
+//Set the color for the end (100%)
+linearGradient4.append("stop") 
+    .attr("offset", "100%")   
+    .attr("stop-color", "#2c2c2c"); //dark blue
+
+
+// bars
+var barsContainer = chart.append('g')
+  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+barsContainer.selectAll("rect").data(bardata).enter().append("rect")
+  .attr('y', y)
+  .attr('height', yScale.rangeBand())
+  .attr('width', function(d) { return x(barValue(d)); })
+  .attr('stroke', 'white')
+  //.style("fill", "url(#linear-gradient)");
+  .attr('fill', function(d){
+        if(d<10)
+        {
+          return "url(#linear-gradient0)";
+        }
+        else if(d<20)
+        {
+          return "url(#linear-gradient1)";
+        }
+        else if(d<30)
+        {
+          return "url(#linear-gradient2)";
+        }
+        else if(d<40)
+        {
+          return "url(#linear-gradient3)";
+        }
+
+        else {
+          return "url(#linear-gradient4)";
+        }
+});
+
+// bar value labels
+barsContainer.selectAll("text").data(bardata).enter().append("text")
+  .attr("x", function(d) { return x(barValue(d)); })
+  .attr("y", yText)
+  .attr("dx", 3) // padding-left
+  .attr("dy", ".35em") // vertical-align: middle
+  .attr("text-anchor", "start") // text-align: right
+  .attr("fill", "white")
+  .attr("stroke", "none")
+  .text(function(d) { return d3.round(barValue(d), 2); });
+// start line
+barsContainer.append("line")
+  .attr("y1", -gridChartOffset)
+  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+  .style("stroke", "#000");
+
+}
+    </script>
+   
+    <script>renderChart();</script>
+
+</html>

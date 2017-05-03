@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+ <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+
+   <div class="container" id="quotepage">
+<br>
+<br>
+<br>
+<hr>
+<h3>Quotes</h3>
+    <% quotes.forEach(function(quote) { %>
+    <div class="quotedivimg">
+<img src="images/<%= quote.image %>" class="quoteImg" alt="image missing">
+</div>
+<div>
+<p><br>  <%= quote.quotation %> - <%= quote.author %> </p>
+
+</div>
+    <% }); %>
+    </div>
+
+<%- include partials/footer %>
+</body>
+<style type="text/css">
+
+   .quoteImg{ max-width: 100%;
+  max-height: 100%;
+}
+.quotedivimg{
+  max-width: 100%;
+  max-height: 100%;
+}
+</style>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

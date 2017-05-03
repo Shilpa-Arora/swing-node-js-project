@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+<title><%= title %></title>
+
+
+<%- include partials/head %>
+  <link href="stylesheets/main1.css" type="text/css" id="stylesheet" rel="stylesheet">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" type="text/css" id="stylesheet" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" type="text/css" id="stylesheet" rel="stylesheet">
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js
+"></script>
+<script src="javascripts/validator.js"></script>
+
+
+
+
+</head>
+<body>
+
+<div class="container" id="registerform">
+
+
+<h3>Register</h3>
+<% if (typeof messages != 'undefined' && messages.length > 0) { %>
+            <% for (var i in messages) { %>
+                <div class="alert alert-info">
+                    <%= messages[i] %>
+                </div>
+            <% } %>
+<% } %>
+<form method="POST" action="register" id="register_form">
+
+
+<div class="row">
+<div class="col-xs-3">
+<img src="images/user.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9">
+<input type="text" name="username" id="username"  placeholder="Enter your Name" class="registerinput"/>
+</div>
+
+</div>
+<hr>
+
+
+
+<div class="row">
+<div class="col-xs-3">
+<img src="images/email.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9">
+
+<input type="text" name="email" id="email"  placeholder="Enter your Email" class="registerinput"/>
+
+</div>
+
+</div>
+<hr>                       
+
+<div class="row">
+<div class="col-xs-3">
+<img src="images/lock.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9"> 
+<input type="password" name="password" id="password"  placeholder="Enter your Password" class="registerinput"/>
+</div>
+
+</div>
+<hr>
+
+<div class="row">
+<div class="col-xs-3">
+<img src="images/lock.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9">
+<input type="password" name="confirm" id="confirm"  placeholder="Confirm your Password" class="registerinput"/>
+</div>
+</div>
+<hr>
+<br>
+<input type="submit" class="btn mainButton" value="Register">
+
+
+</form>
+</div>
+
+</body>
+<script src="javascripts/bootstrap.js"></script>
+<script src="javascripts/main.js"></script>
+
+</html>

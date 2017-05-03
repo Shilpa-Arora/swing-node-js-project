@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/main1.css" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+
+
+    <div class="container" id="loginform">
+   <h1 class="hidden">Main body</h1>
+    <img src="images/logo-7.png" id="icon" alt="image missing">
+   
+                    <form method="POST" action="/login">          
+                    <div class="row">
+                        <div class="col-xs-3">
+                                    <img src="images/user.png" class= "inputicon" alt="image missing">
+                                    </div>
+                                               <div class="col-xs-9">
+                                    <input type="text" name="username" id="username"  placeholder="Enter your Name"/>
+</div>
+</div>
+   <hr>
+   <br>
+       <div class="row">
+                        <div class="col-xs-3">
+                                    <img src="images/lock.png" class= "inputicon" alt="image missing">
+                                    </div>
+                                               <div class="col-xs-9"> 
+                                    <input type="password" name="password" id="password"  placeholder="Enter your Password"/>
+</div>
+
+</div>
+   <hr>
+   <br>
+                            <button target="_blank" type="submit" class="btn mainButton">Login
+                            </button>
+                        </div>
+                        
+                    </form>
+
+                <div class="row" id="options">
+                 <div class="col-xs-6">
+                   <a href="/register" class="text-center new-account">Create an account </a>
+                   </div>
+                    <div class="col-xs-6">
+                <a href="/help" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </div>
+                </div>
+        
+
+         
+
+</div>
+
+</body>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

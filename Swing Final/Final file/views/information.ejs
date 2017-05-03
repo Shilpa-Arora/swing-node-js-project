@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+<div class="container" id="aboutdiv">
+<br>
+<br>
+<br>
+<hr>
+<h3>Survey</h3>
+<img src="images/profileimages/<%= user.profileimage %>" class="img-responsive img-circle margin " style="display:inline" alt="profile image missing" id="profilepic">
+<br>
+<br>
+
+<p class="discription">
+This application generates your mood swing reports and suggests you some techniques to make your mood more joyful.<br>s
+You have to finish a minimum of seven surveys to access your report. <br>
+The survey can be done once a day.<br>
+
+
+
+</p>
+
+</div>
+
+          
+<%- include partials/footer %>
+</body>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

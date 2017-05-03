@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+<div class="container" id="aboutdiv">
+<br>
+<br>
+<br>
+<hr>
+<h3>Survey</h3>
+<img src="images/profileimages/<%= user.profileimage %>" class="img-responsive img-circle margin " style="display:inline" alt="profile image missing" id="profilepic">
+
+ <br> 
+ <br> 
+ <br> 
+<p class="discription">
+The survey is updated every 24 hours.
+You have already submitted the survey once. Please wait for 24 hours to fill the new survey form.
+
+
+</p>
+
+</div>
+
+          
+<%- include partials/footer %>
+</body>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

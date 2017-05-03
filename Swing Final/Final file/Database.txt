@@ -1,0 +1,92 @@
+[
+{
+
+quotation:"This is a wonderful day. I’ve never seen this one before",
+image:"/quotes/img1.jpg",
+author:"Maya Angelou"
+},
+{
+
+quotation:"Success is the sum of small efforts, repeated day in and day out",
+image:"/quotes/img2.jpg",
+author:"Robert Collier"
+},
+{
+
+quotation:"We become what we think about most of the time, and that’s the strangest secret",
+image:"/quotes/img3.jpg",
+author:"Earl Nightingale"
+},
+{
+
+quotation:"If you are not willing to risk the usual, you will have to settle for the ordinary",
+image:"/quotes/img4.jpg",
+author:"Gurbaksh Chahal"
+},
+{
+
+quotation:"Stop chasing the money and start chasing the passion",
+image:"/quotes/img5.jpg",
+author:"Tony Hsieh"
+},
+{
+
+quotation:"If you are willing to do more than you are paid to do, eventually you will be paid to do more than you do",
+image:"/quotes/img6.jpg",
+author:"Anonymous"
+},
+{
+
+quotation:"Opportunities don’t happen. You create them",
+image:"/quotes/img7.jpg",
+author:"Chris Grosser"
+},
+{
+
+quotation:"Try not to become a person of success, but rather try to become a person of value",
+image:"/quotes/img8.jpg",
+author:"Albert Einstein"
+},{
+
+quotation:"It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change",
+image:"/quotes/img9.jpg",
+author:"Charles Darwin"
+},
+{
+
+quotation:"I have not failed. I’ve just found 10,000 ways that won’t work",
+image:"/quotes/img10.jpg",
+author:"Thomas Edison"
+},{
+
+quotation:"A successful man is one who can lay a firm foundation with the bricks others have thrown at him",
+image:"/quotes/img11.jpg",
+author:"David Brinkley"
+},{
+
+quotation:"The whole secret of a successful life is to find out what is one’s destiny to do, and then do it",
+image:"/quotes/img12.jpg",
+author:"Henry Ford"
+},{
+
+quotation:"Don’t be afraid to give up the good to go for the great",
+image:"/quotes/img13.jpg",
+author:" John D Rockefeller"
+},{
+
+quotation:"It’s not whether you get knocked down. It’s whether you get up",
+image:"/quotes/img14.jpg",
+author:" Vince Lombardi"
+},{
+
+quotation:"Only put off until tomorrow what you are willing to die having left undone",
+image:"/quotes/img15.jpg",
+author:"Pablo Picasso"
+},
+{
+quotation:"The only place where success comes before work is in the dictionary",
+image:"/quotes/img16.jpg",
+author:"Vidal Sassoon"
+}
+
+]

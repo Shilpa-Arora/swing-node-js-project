@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+   <link href="stylesheets/<%= user.theme %>" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+<%- include partials/header %>
+<div class="container" id="aboutdiv">
+<br>
+<br>
+<br>
+<hr class="abouthr">
+<h3>About</h3>
+<br>
+
+    <a href="http://shilpa-arora.com/"><p class="discription">Follow us</p>
+    </a>
+<hr>   
+
+    <a href="/terms"><p class="discription">Terms of Service</p>
+    </a>
+<hr>
+    <a href="/policies"><p class="discription">Privacy Policies</p>
+    </a>
+<hr> 
+</div>
+
+          
+<%- include partials/footer %>
+</body>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>

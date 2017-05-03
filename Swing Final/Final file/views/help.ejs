@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+
+  <%- include partials/head %>
+    <link href="stylesheets/main1.css" type="text/css" id="stylesheet" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" id="registerform">
+
+<h3>Help</h3>
+<form method="POST" action="help" id="help">
+<div class="row">
+<div class="col-xs-3">
+<img src="images/user.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9">
+<input type="text" name="username" id="username"  placeholder="Enter your Name" class="registerinput"/>
+</div>
+
+</div>
+<hr>
+
+
+
+<div class="row">
+<div class="col-xs-3">
+<img src="images/email.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9">
+
+<input type="text" name="email" id="email"  placeholder="Enter your Email" class="registerinput"/>
+
+</div>
+
+</div>
+<hr>  
+
+
+
+
+<div class="row">
+<div class="col-xs-3">
+<img src="images/lock.png" class= "inputicon" alt="image missing">
+</div>
+<div class="col-xs-9">
+<textarea name="message" maxlength="500" rows="3" placeholder="Write your message here..." type="text"></textarea>
+</div>
+</div>
+<hr>
+<br>
+<input type="submit" class="btn mainButton" value="Submit">
+
+
+
+</form>
+</div>
+         
+
+</body>
+  <script src="javascripts/bootstrap.js"></script>
+        <script src="javascripts/main.js"></script>
+
+</html>
